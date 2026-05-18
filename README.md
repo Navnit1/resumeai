@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ⚡ ResumeAI — Intelligent Resume Builder & ATS Optimizer
 
 > Full-stack AI-powered resume builder with ATS scoring, GPT-4 content generation, admin dashboard, JWT auth, PDF export, and Cloudinary image uploads.
@@ -301,3 +302,6 @@ npm run build
 ## 📄 License
 
 MIT © ResumeAI 2024
+=======
+# resumeai
+>>>>>>> adf9fb9e1eb5ecbe241288af14552e739b0cb0f2

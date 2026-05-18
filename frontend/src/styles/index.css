@@ -1,0 +1,59 @@
+/* src/styles/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* ❌ removed @apply dark */
+  }
+
+  body {
+    @apply bg-dark-300 text-white;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    @apply border-dark-500;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-dark-200; }
+  ::-webkit-scrollbar-thumb { @apply bg-dark-500 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-dark-400; }
+}
+
+@layer components {
+  .bg-dark-100 { background-color: #13131E; }
+  .bg-dark-200 { background-color: #12121A; }
+  .bg-dark-300 { background-color: #0A0A0F; }
+  .bg-dark-400 { background-color: #22223A; }
+  .bg-dark-500 { background-color: #2A2A45; }
+
+  .border-dark-500 { border-color: #2A2A45; }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #7C6FFF, #00D4FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 20px rgba(124, 111, 255, 0.3);
+  }
+
+  .animate-in {
+    animation: fadeSlideUp 0.3s ease-out;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

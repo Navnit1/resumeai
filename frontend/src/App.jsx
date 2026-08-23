@@ -18,6 +18,7 @@ import ResumeBuilderPage from './pages/ResumeBuilderPage';
 import ResumeDetailPage from './pages/ResumeDetailPage';
 import ATSCheckerPage from './pages/ATSCheckerPage';
 import AIGeneratorPage from './pages/AIGeneratorPage';
+import JobRecommendationsPage from './pages/JobRecommendationsPage';
 import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
 import PublicResumePage from './pages/PublicResumePage';
@@ -76,6 +77,7 @@ export default function App() {
           <Route path="/resumes/:id" element={<ResumeDetailPage />} />
           <Route path="/ats-checker" element={<ATSCheckerPage />} />
           <Route path="/ai-generator" element={<AIGeneratorPage />} />
+          <Route path="/jobs" element={<JobRecommendationsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/admin" element={<ProtectedRoute adminOnly><AdminPage /></ProtectedRoute>} />
         </Route>

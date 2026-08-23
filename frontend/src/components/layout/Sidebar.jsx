@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   null, // divider
   { to: '/ats-checker', icon: '🎯', label: 'ATS Checker' },
   { to: '/ai-generator', icon: '⚡', label: 'AI Generator' },
+  { to: '/jobs', icon: '💼', label: 'Job Recommendations' },
   null,
   { to: '/profile', icon: '👤', label: 'Profile' },
 ];

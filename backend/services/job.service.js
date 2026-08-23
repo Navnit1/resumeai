@@ -1,6 +1,6 @@
 // services/job.service.js
 const OpenAI = require('openai');
-const pdfParse = require('pdf-parse');
+const pdfParse = require('pdf-parse/lib/pdf-parse.js');
 const { AppError } = require('../utils/AppError');
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });

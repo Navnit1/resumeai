@@ -5,6 +5,7 @@ const uiSlice = createSlice({
   name: 'ui',
   initialState: {
     sidebarOpen: true,
+    mobileMenuOpen: false,
     modal: null,           // { type, data }
     toast: null,           // { message, type }
     builderTab: 0,
@@ -16,6 +17,8 @@ const uiSlice = createSlice({
   },
   reducers: {
     toggleSidebar: (state) => { state.sidebarOpen = !state.sidebarOpen; },
+    toggleMobileMenu: (state) => { state.mobileMenuOpen = !state.mobileMenuOpen; },
+    closeMobileMenu: (state) => { state.mobileMenuOpen = false; },
     openModal: (state, action) => { state.modal = action.payload; },
     closeModal: (state) => { state.modal = null; },
     showToast: (state, action) => { state.toast = action.payload; },
@@ -29,7 +32,7 @@ const uiSlice = createSlice({
 });
 
 export const {
-  toggleSidebar, openModal, closeModal, showToast, hideToast,
+  toggleSidebar, toggleMobileMenu, closeMobileMenu, openModal, closeModal, showToast, hideToast,
   setBuilderTab, setAdminTab, setAtsTab, setSearchQuery, setFilterPlan,
 } = uiSlice.actions;
 export default uiSlice.reducer;

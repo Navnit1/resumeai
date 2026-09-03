@@ -55,7 +55,7 @@ export default function Sidebar() {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-500 flex items-center justify-center text-sm font-bold flex-shrink-0">⚡</div>
           {sidebarOpen && (
             <div>
-              <div className="font-bold text-sm bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">ResumeAI</div>
+              <div className="font-bold text-sm bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">NextRole AI</div>
               <div className="text-xs text-gray-500">Intelligent Builder</div>
             </div>
           )}

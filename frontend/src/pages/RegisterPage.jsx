@@ -18,7 +18,7 @@ export default function RegisterPage() {
     if (form.password !== form.confirmPassword) { toast.error('Passwords do not match'); return; }
     if (form.password.length < 8) { toast.error('Password must be at least 8 characters'); return; }
     const res = await dispatch(registerUser({ name: form.name, email: form.email, password: form.password }));
-    if (res.payload?.user) { toast.success('Account created! Welcome to ResumeAI 🎉'); navigate('/dashboard'); }
+    if (res.payload?.user) { toast.success('Account created! Welcome to NextRole AI 🎉'); navigate('/dashboard'); }
   };
 
   return (

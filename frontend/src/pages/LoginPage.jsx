@@ -25,7 +25,7 @@ export default function LoginPage() {
   return (
     <div>
       <h2 className="text-xl font-bold mb-1">Sign in</h2>
-      <p className="text-sm text-gray-400 mb-6">Welcome back to ResumeAI</p>
+      <p className="text-sm text-gray-400 mb-6">Welcome back to NextRole AI</p>
       {error && <div className="bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg px-4 py-3 text-sm mb-4">{error}</div>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input label="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" required />

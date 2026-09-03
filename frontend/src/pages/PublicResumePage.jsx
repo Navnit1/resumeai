@@ -35,11 +35,11 @@ export default function PublicResumePage() {
     <div className="min-h-screen bg-dark-300 py-10 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-6">
-          <h1 className="text-lg font-bold bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">⚡ ResumeAI</h1>
+          <h1 className="text-lg font-bold bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">⚡ NextRole AI</h1>
           <p className="text-gray-500 text-sm mt-1">{resume.personal?.name}'s Resume</p>
         </div>
         <ResumePaper data={resume} />
-        <p className="text-center text-xs text-gray-600 mt-6">Built with ResumeAI · resumeai.dev</p>
+        <p className="text-center text-xs text-gray-600 mt-6">Built with NextRole AI · nextroleai.dev</p>
       </div>
     </div>
   );

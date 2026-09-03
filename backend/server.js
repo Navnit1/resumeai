@@ -13,6 +13,7 @@ const resumeRoutes = require('./routes/resume.routes');
 const aiRoutes = require('./routes/ai.routes');
 const userRoutes = require('./routes/user.routes');
 const adminRoutes = require('./routes/admin.routes');
+const jobRoutes = require('./routes/job.routes');
 const { errorHandler } = require('./middleware/error.middleware');
 
 const app = express();
@@ -57,6 +58,7 @@ app.use('/api/resumes', resumeRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/jobs', jobRoutes);
 
 // ─── Health Check ──────────────────────────────────────────────────────────────
 app.get('/api/health', (req, res) => {

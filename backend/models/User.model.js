@@ -68,8 +68,9 @@ const userSchema = new mongoose.Schema(
 
 // ─── Virtual: Full name initials ──────────────────────────────────────────────
 userSchema.virtual('initials').get(function () {
-  return this.name
+  return (this.name || '')
     .split(' ')
+    .filter(Boolean)
     .map((n) => n[0])
     .join('')
     .toUpperCase()

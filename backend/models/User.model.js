@@ -99,7 +99,7 @@ userSchema.methods.toSafeObject = function () {
 };
 
 // ─── Index ────────────────────────────────────────────────────────────────────
-userSchema.index({ email: 1 });
+
 userSchema.index({ role: 1 });
 userSchema.index({ createdAt: -1 });
 

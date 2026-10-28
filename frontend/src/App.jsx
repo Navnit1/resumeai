@@ -10,6 +10,7 @@ import AppLayout from './components/layout/AppLayout';
 import AuthLayout from './components/layout/AuthLayout';
 
 // Pages
+import HeroPage from "./pages/HeroPage";
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
@@ -81,6 +82,7 @@ export default function App() {
     />
 
     {/* Public */}
+    <Route path="/" element={<HeroPage />} />
     <Route
       path="/resume/share/:token"
       element={<PublicResumePage />}

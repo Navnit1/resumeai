@@ -48,42 +48,135 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <BrowserRouter>
-      <Toaster
-        position="bottom-right"
-        toastOptions={{
-          style: { background: '#1A1A26', color: '#F0F0FF', border: '1px solid #2A2A45' },
-          success: { iconTheme: { primary: '#00E580', secondary: '#1A1A26' } },
-          error: { iconTheme: { primary: '#FF5577', secondary: '#1A1A26' } },
-        }}
+    
+<BrowserRouter>
+  <Toaster
+    position="bottom-right"
+    toastOptions={{
+      style: {
+        background: '#1A1A26',
+        color: '#F0F0FF',
+        border: '1px solid #2A2A45',
+      },
+      success: {
+        iconTheme: {
+          primary: '#00E580',
+          secondary: '#1A1A26',
+        },
+      },
+      error: {
+        iconTheme: {
+          primary: '#FF5577',
+          secondary: '#1A1A26',
+        },
+      },
+    }}
+  />
+
+  <Routes>
+    {/* Redirect root URL to Dashboard */}
+    <Route
+      path="/"
+      element={<Navigate to="/dashboard" replace />}
+    />
+
+    {/* Public */}
+    <Route
+      path="/resume/share/:token"
+      element={<PublicResumePage />}
+    />
+
+    {/* Auth */}
+    <Route element={<AuthLayout />}>
+      <Route
+        path="/login"
+        element={
+          <GuestRoute>
+            <LoginPage />
+          </GuestRoute>
+        }
       />
-      <Routes>
-        {/* Public */}
-        <Route path="/resume/share/:token" element={<PublicResumePage />} />
 
-        {/* Auth */}
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<GuestRoute><LoginPage /></GuestRoute>} />
-          <Route path="/register" element={<GuestRoute><RegisterPage /></GuestRoute>} />
-        </Route>
+      <Route
+        path="/register"
+        element={
+          <GuestRoute>
+            <RegisterPage />
+          </GuestRoute>
+        }
+      />
+    </Route>
 
-        {/* App */}
-        <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
-          <Route index element={<Navigate to="/dashboard" replace />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/resumes" element={<ResumesPage />} />
-          <Route path="/resumes/new" element={<ResumeBuilderPage />} />
-          <Route path="/resumes/:id/edit" element={<ResumeBuilderPage />} />
-          <Route path="/resumes/:id" element={<ResumeDetailPage />} />
-          <Route path="/ats-checker" element={<ATSCheckerPage />} />
-          <Route path="/ai-generator" element={<AIGeneratorPage />} />
-          <Route path="/jobs" element={<JobRecommendationsPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/admin" element={<ProtectedRoute adminOnly><AdminPage /></ProtectedRoute>} />
-        </Route>
+    {/* Protected App Routes */}
+    <Route
+      element={
+        <ProtectedRoute>
+          <AppLayout />
+        </ProtectedRoute>
+      }
+    >
+      <Route
+        path="/dashboard"
+        element={<DashboardPage />}
+      />
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+      <Route
+        path="/resumes"
+        element={<ResumesPage />}
+      />
+
+      <Route
+        path="/resumes/new"
+        element={<ResumeBuilderPage />}
+      />
+
+      <Route
+        path="/resumes/:id/edit"
+        element={<ResumeBuilderPage />}
+      />
+
+      <Route
+        path="/resumes/:id"
+        element={<ResumeDetailPage />}
+      />
+
+      <Route
+        path="/ats-checker"
+        element={<ATSCheckerPage />}
+      />
+
+      <Route
+        path="/ai-generator"
+        element={<AIGeneratorPage />}
+      />
+
+      <Route
+        path="/jobs"
+        element={<JobRecommendationsPage />}
+      />
+
+      <Route
+        path="/profile"
+        element={<ProfilePage />}
+      />
+
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute adminOnly>
+            <AdminPage />
+          </ProtectedRoute>
+        }
+      />
+    </Route>
+
+    {/* 404 - Not Found */}
+    <Route
+      path="*"
+      element={<NotFoundPage />}
+    />
+  </Routes>
+</BrowserRouter>
+
   );
 }
